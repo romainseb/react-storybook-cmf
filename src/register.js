@@ -6,7 +6,7 @@ export default function register() {
 		const channel = addons.getChannel();
 		addons.addPanel('react-storybook-cmf/panel', {
 			title: 'CMF',
-			render: () => <div>{channel}</div>,
+			render: () => <div>{channel} {api}</div>,
 		});
 	});
 }
