@@ -1,34 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { initializeStore, RegistryProvider } from 'react-cmf';
+import mock from 'react-cmf/lib/mock';
 
 
-const preloadedState = {
-	cmf: {
-		settings: {
-			contentTypes: {
-				article: {
-					actions: {
-						primary: [{
-							id: 'edit',
-							name: 'Edit',
-							icon: 'fa-pencil',
-							type: 'TEST_EDIT',
-						}],
-					},
-				},
-			},
-			actions: {
-				'menu:demo': {
-					id: 'menu',
-					name: 'Menu',
-					icon: 'fa-bars',
-					type: 'TEST_MENU',
-				},
-			},
-		},
-	},
-};
+const preloadedState = mock.state();
 const store = initializeStore(undefined, preloadedState);
 
 /**
