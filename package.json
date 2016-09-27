@@ -14,7 +14,9 @@
     "addon"
   ],
   "scripts": {
-    "prepublish": "babel -d lib ./src/"
+    "prepublish": "babel -d lib ./src/",
+    "lint": "eslint src/*.js",
+    "test": "npm run lint"
   },
   "main": "lib/index.js",
   "devDependencies": {
