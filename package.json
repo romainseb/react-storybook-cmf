@@ -16,7 +16,8 @@
   "scripts": {
     "prepublish": "babel -d lib ./src/",
     "lint": "eslint src/*.js",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "main": "lib/index.js",
   "devDependencies": {
