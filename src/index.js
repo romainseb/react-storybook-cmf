@@ -1,6 +1,7 @@
 import React from 'react';
 import CMFStory from './CMFStory';
 import CMFDecorator from './CMFDecorator';
+import register from './register';
 
 export default {
 	addWithCMF(storyName, storyFn) {
@@ -9,9 +10,9 @@ export default {
 			add = this.addWithInfo;
 		}
 		add(storyName, () => (
-				<CMFStory>
-					{storyFn()}
-				</CMFStory>
+			<CMFStory>
+				{storyFn()}
+			</CMFStory>
 		), { showInline: true });
 	},
 };
@@ -19,4 +20,5 @@ export default {
 export {
 	CMFDecorator,
 	CMFStory,
+	register,
 };

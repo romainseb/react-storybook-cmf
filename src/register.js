@@ -1,14 +1,12 @@
+import React from 'react';
 import addons from '@kadira/storybook-addons';
 
-addons.register('react-storybook-cmf', (api) => {
-  // Also need to set a unique name to the panel.
-  console.log('api', api);
-/*
-  addons.addPanel('kadira/notes/panel', {
-    title: 'Notes',
-    render: () => (
-      <Notes channel={addons.getChannel()} api={api} />
-    ),
-  });
-  */
-});
+export default function register() {
+	addons.register('react-storybook-cmf', (api) => {
+		const channel = addons.getChannel();
+		addons.addPanel('react-storybook-cmf/panel', {
+			title: 'CMF',
+			render: () => <div>{channel}</div>,
+		});
+	});
+}
