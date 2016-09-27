@@ -1,12 +1,11 @@
 {
   "name": "react-storybook-cmf",
-  "version": "0.0.0",
   "description": "react-storybook-cmf library.",
   "license": "Apache-2.0",
   "author": "jmfrancois jmfrancois@talend.com",
   "repository": {
     "type": "git",
-    "url": "github:jmfrancois/react-storybook-cmf"
+    "url": "https://github.com/jmfrancois/react-storybook-cmf"
   },
   "keywords": [
     "react",
@@ -44,7 +43,7 @@
     "react-router-redux": "^4.0.6",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "semantic-release": "4.3.5",
+    "semantic-release": "^4.3.5",
     "webpack": "1.13.1"
   },
   "dependencies": {
