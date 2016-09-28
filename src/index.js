@@ -4,13 +4,20 @@ import CMFDecorator from './CMFDecorator';
 import register from './register';
 
 export default {
-	addWithCMF(storyName, storyFn) {
+	addWithCMF(storyName, storyFn, options) {
 		let add = this.add;
 		if (this.addWithInfo) {
 			add = this.addWithInfo;
 		}
+		let state;
+		if (options) {
+			state = options.state;
+		}
+		if (!state) {
+			state = null;
+		}
 		add(storyName, () => (
-			<CMFStory>
+			<CMFStory state={state}>
 				{storyFn()}
 			</CMFStory>
 		), { showInline: true });

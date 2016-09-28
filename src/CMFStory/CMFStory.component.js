@@ -3,22 +3,29 @@ import { Provider } from 'react-redux';
 import { initializeStore, RegistryProvider } from 'react-cmf';
 import mock from 'react-cmf/lib/mock';
 
-
-const preloadedState = mock.state();
-const store = initializeStore(undefined, preloadedState);
-
 /**
  * @param {object} props react props
  * @example
 <CMFStory name="Hello world"></CMFStory>
  */
 class CMFStory extends React.Component {
+	constructor(props) {
+		super(props);
+		let state;
+		if (props) {
+			state = props.state;
+		}
+		if (!state) {
+			state = mock.state();
+		}
+		this.store = initializeStore(undefined, state);
+	}
 	getChildContext() {
 		return { router: {} };
 	}
 	render() {
 		return (
-			<Provider store={store}>
+			<Provider store={this.store}>
 				<RegistryProvider>
 					{this.props.children}
 				</RegistryProvider>
@@ -27,6 +34,9 @@ class CMFStory extends React.Component {
 	}
 }
 
+CMFStory.propTypes = {
+	state: React.PropTypes.object,
+};
 CMFStory.contextTypes = {
 	registry: React.PropTypes.object,
 };
