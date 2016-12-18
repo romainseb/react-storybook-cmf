@@ -18,7 +18,13 @@ class CMFStory extends React.Component {
 		if (!state) {
 			state = mock.state();
 		}
-		this.store = store.initialize(undefined, state);
+		enhancer, middleware
+		this.store = store.initialize(
+			props.reducer,
+			state,
+			props.enhancer,
+			props.middleware
+		);
 	}
 
 	getChildContext() {
@@ -39,6 +45,9 @@ class CMFStory extends React.Component {
 CMFStory.propTypes = {
 	state: PropTypes.object,
 	children: PropTypes.node,
+	reducer: PropTypes.func,
+	enhancer: PropTypes.func,
+	middleware: PropTypes.arrayOf(PropTypes.func),
 };
 CMFStory.contextTypes = {
 	registry: PropTypes.object,

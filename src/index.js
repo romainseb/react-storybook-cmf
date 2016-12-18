@@ -17,7 +17,12 @@ export default {
 			state = null;
 		}
 		add(storyName, () => (
-			<CMFStory state={state}>
+			<CMFStory
+				state={state}
+				reducer={options.reducer}
+				enhancer={options.enhancer}
+				middleware={options.middleware}
+			>
 				{storyFn()}
 			</CMFStory>
 		), { showInline: true });
