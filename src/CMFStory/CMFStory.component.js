@@ -18,7 +18,6 @@ class CMFStory extends React.Component {
 		if (!state) {
 			state = mock.state();
 		}
-		enhancer, middleware
 		this.store = store.initialize(
 			props.reducer,
 			state,
