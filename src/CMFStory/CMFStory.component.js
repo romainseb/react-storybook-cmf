@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { store, RegistryProvider } from 'react-cmf';
-import mock from 'react-cmf/lib/mock';
+import { store, RegistryProvider } from '@talend/react-cmf';
+import mock from '@talend/react-cmf/lib/mock';
 
 /**
  * @param {object} props react props
@@ -22,7 +23,7 @@ class CMFStory extends React.Component {
 			props.reducer,
 			state,
 			props.enhancer,
-			props.middleware
+			props.middleware,
 		);
 	}
 
