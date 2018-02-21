@@ -28,7 +28,7 @@ class CMFStory extends React.Component {
 	}
 
 	getChildContext() {
-		return { router: {} };
+		return { router: { route: { location: {} } } };
 	}
 
 	render() {
